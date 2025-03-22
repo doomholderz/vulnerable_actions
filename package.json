@@ -1,27 +1,26 @@
 {
+    "$schema": "https://json.schemastore.org/package.json",
+    "private": true,
+    "workspaces": [
+      "packages/*",
+      "demo",
+      "test"
+    ],
     "scripts": {
-        "prepare": "husky",
-        "lint": "eslint . --cache --cache-strategy content && prettier --check .",
-        "lint:fix": "eslint . --cache --cache-strategy content --fix",
-        "lint:clear": "rimraf .eslintcache",
-        "prettier": "prettier --cache --write .",
-        "test": "jest",
-        "test:watch": "jest --clearCache && jest --watch",
-        "test:watch:all": "jest --watchAll",
-        "test:types": "node ./scripts/test-types.js",
-        "test:locales": "tsc --project ./scripts/tsconfig.json && node ./scripts/dist/test-locales.js",
-        "lint:dep-ownership": "tsc --project ./scripts/tsconfig.json && node ./scripts/dist/dep-ownership.js",
-        "docs:json": "compodoc -p ./tsconfig.json -e json -d . --disableRoutesGraph",
-        "storybook": "ng run components:storybook",
-        "build-storybook": "ng run components:build-storybook",
-        "build-storybook:ci": "ng run components:build-storybook --webpack-stats-json",
-        "postinstall": "patch-package"
+      "build": "turbo run build",
+      "demo": "yarn workspace demo start",
+      "demo:gcs": "yarn workspace demo start:gcs",
+      "demo:s3": "yarn workspace demo start:s3",
+      "lint": "turbo run lint",
+      "format": "turbo run format",
+      "test": "turbo run test --concurrency 1"
     },
-    "dependencies": {
-        "rxjs": "7.8.1"
+    "devDependencies": {
+      "eslint": "^8.48.0",
+      "eslint-config-custom": "workspace:*",
+      "eslint-plugin-prettier": "^4.2.1",
+      "prettier": "^2.8.8",
+      "turbo": "^1.10.13"
     },
-    "engines": {
-        "node": "~20",
-        "npm": "~10"
-    }
-}
+    "packageManager": "yarn@3.2.3"
+  }
