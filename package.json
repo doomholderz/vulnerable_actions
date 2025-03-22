@@ -2,25 +2,21 @@
     "$schema": "https://json.schemastore.org/package.json",
     "private": true,
     "workspaces": [
-      "packages/*",
-      "demo",
-      "test"
+        "packages/*",
+        "demo",
+        "test"
     ],
     "scripts": {
-      "build": "turbo run build",
-      "demo": "yarn workspace demo start",
-      "demo:gcs": "yarn workspace demo start:gcs",
-      "demo:s3": "yarn workspace demo start:s3",
-      "lint": "turbo run lint",
-      "format": "turbo run format",
-      "test": "turbo run test --concurrency 1"
+        "build": "turbo run build",
+        "demo": "yarn workspace demo start",
+        "demo:gcs": "yarn workspace demo start:gcs",
+        "demo:s3": "yarn workspace demo start:s3",
+        "lint": "turbo run lint",
+        "format": "turbo run format",
+        "test": "turbo run test --concurrency 1"
     },
     "devDependencies": {
-      "eslint": "^8.48.0",
-      "eslint-config-custom": "workspace:*",
-      "eslint-plugin-prettier": "^4.2.1",
-      "prettier": "^2.8.8",
-      "turbo": "^1.10.13"
+        "turbo": "^1.10.13"
     },
     "packageManager": "yarn@3.2.3"
-  }
+}
