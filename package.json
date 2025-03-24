@@ -19,7 +19,7 @@
         "turbo": "^1.10.13"
     },
     "dependencies": {
-        "lodash": "4.17.2"
+        "lodash": "4.17.21"
     },
     "packageManager": "yarn@3.2.3"
 }
