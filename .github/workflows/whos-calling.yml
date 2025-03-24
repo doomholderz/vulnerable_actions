@@ -10,6 +10,17 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
+  check-actor-permissions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check User Permission
+        id: check-user-permission
+        uses: actions-cool/check-user-permission@v2
+        with:
+          require: write
+          username: dependabot[bot]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   whos-calling:
     name: ${{matrix.node}}
     runs-on: ubuntu-latest
@@ -21,3 +32,5 @@ jobs:
         run: echo ${{ github.actor }}
       - name: who's actor_iding
         run: echo ${{ github.actor_id }}
+
+        
