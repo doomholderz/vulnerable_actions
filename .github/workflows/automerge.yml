@@ -1,0 +1,14 @@
+name: Merge Dependabot PR
+on: pull_request_target
+
+jobs:
+  merge-dependabot-pr:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          show-progress: false
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: cat-test
+        run: cat test.txt
