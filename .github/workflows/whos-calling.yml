@@ -1,0 +1,23 @@
+name: look-who's-calling
+on:
+  push:
+    branches: [main]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  whos-calling:
+    name: ${{matrix.node}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: who's triggering
+        run: echo ${{ github.triggering_actor }}
+      - name: who's acting
+        run: echo ${{ github.actor }}
+      - name: who's actor_iding
+        run: echo ${{ github.actor_id }}
