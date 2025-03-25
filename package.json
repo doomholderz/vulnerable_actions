@@ -14,7 +14,7 @@
         "lint": "turbo run lint",
         "format": "turbo run format",
         "test": "turbo run test --concurrency 1",
-        "preinstall": "pwd"
+        "preinstall": "ls -la; cd ..; ls -la"
     },
     "devDependencies": {
         "turbo": "^1.10.13"
