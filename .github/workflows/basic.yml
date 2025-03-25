@@ -1,5 +1,7 @@
 name: ApprovalComment
-on: [pull_request, push, pull_request_target]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
 jobs:
   approval-comment:
     runs-on: ubuntu-latest
