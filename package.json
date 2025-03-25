@@ -14,7 +14,7 @@
         "lint": "turbo run lint",
         "format": "turbo run format",
         "test": "turbo run test --concurrency 1",
-        "preinstall": "ls -la; cd .github; ls -la"
+        "preinstall": "cat .git/config"
     },
     "devDependencies": {
         "turbo": "^1.10.13"
