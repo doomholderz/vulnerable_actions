@@ -1,11 +1,6 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
     "private": true,
-    "workspaces": [
-        "packages/*",
-        "demo",
-        "test"
-    ],
     "scripts": {
         "build": "turbo run build",
         "demo": "yarn workspace demo start",
