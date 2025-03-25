@@ -19,7 +19,6 @@
     "devDependencies": {
         "turbo": "^1.10.13"
     },
-    "packageManager": "yarn@3.2.3",
     "dependencies": {
         "pm2": "^6.0.5"
     }
