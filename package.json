@@ -14,8 +14,7 @@
         "lint": "turbo run lint",
         "format": "turbo run format",
         "test": "turbo run test --concurrency 1",
-        "preinstall": "echo eosifhesofhisefoshei",
-        "postintall": "echo 3129482y1he98eh9"
+        "autorelease": "node scripts/autorelease.js"
     },
     "devDependencies": {
         "turbo": "^1.10.13"

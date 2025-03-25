@@ -1,0 +1,37 @@
+name: issue-commenter
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  Auto-issue-commenter:
+    name: Auto release preview
+    if: github.event.comment.body == '@test trigger release' && github.event.issue.pull_request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get PR SHA
+        id: sha
+        uses: actions/github-script@v4
+        with:
+          result-encoding: string
+          script: |
+            const { owner, repo, number } = context.issue;
+            const pr = await github.pulls.get({
+              owner,
+              repo,
+              pull_number: number,
+            });
+            return pr.data.head.sha
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.sha.outputs.result }}
+          fetch-depth: 2
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Auto release preview
+        id: "autorelease"
+        run: |
+          yarn add @actions/core
+          yarn autorelease preview ${{ github.event.issue.number }}
