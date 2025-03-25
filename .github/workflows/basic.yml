@@ -1,10 +1,7 @@
 name: ApprovalComment
-on:
-  pull_request_review:
-    types: [submitted]
+on: [pull_request, push, pull_request_target]
 jobs:
   approval-comment:
-    if: startsWith(github.event.review.body, 'test123') || startsWith(github.event.review.body, '/test123 scale') || startsWith(github.event.review.body, '/test123 versionCompatibility')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
