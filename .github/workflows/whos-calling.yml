@@ -18,7 +18,7 @@ jobs:
         uses: actions-cool/check-user-permission@v2
         with:
           require: write
-          username: dependabot[bot]
+          username: doomholderz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   whos-calling:
