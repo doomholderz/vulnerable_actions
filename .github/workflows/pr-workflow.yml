@@ -1,0 +1,20 @@
+name: another-Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pr-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.repository_owner }}
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Set up Node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        with:
+          node-version: 20.17.0
+      - run: npm install
