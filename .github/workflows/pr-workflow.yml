@@ -4,10 +4,12 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   pr-test:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
     steps:
       - run: echo ${{ github.repository_owner }}
       - uses: actions/checkout@v2
