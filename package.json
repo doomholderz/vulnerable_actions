@@ -17,7 +17,7 @@
         "autorelease": "node scripts/autorelease.js"
     },
     "devDependencies": {
-        "turbo": "^1.10.13"
+        "turbo": "^2.5.3"
     },
     "packageManager": "yarn@3.2.3",
     "dependencies": {
