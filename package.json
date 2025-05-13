@@ -21,6 +21,6 @@
     },
     "packageManager": "yarn@3.2.3",
     "dependencies": {
-        "pm2": "^6.0.5"
+        "pm2": "^6.0.6"
     }
 }
